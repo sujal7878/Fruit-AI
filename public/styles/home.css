@@ -1,0 +1,108 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc); /* Higher contrast gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Landing Container */
+.landing-container {
+    background: rgba(255, 255, 255, 0.8); /* Less transparency for better readability */
+    backdrop-filter: blur(10px);
+    width: 350px;
+    height: 550px;
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333; /* Darker text for better contrast */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    transition: transform 0.3s ease;
+}
+
+.landing-container:hover {
+    transform: translateY(-10px);
+}
+
+.landing-container h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222; /* Darker color for heading */
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3); /* Darker shadow for better readability */
+}
+
+.landing-container p {
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: #444; /* Darker text color */
+}
+
+/* Landing Menu */
+.landing-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Menu Item Button Animations */
+.menu-item {
+    background: #3498db; /* Vibrant blue background */
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+/* Hover Effects */
+.menu-item:hover {
+    background: #2980b9; /* Darker blue on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.menu-item:active {
+    background: #1f4f7c; /* Even darker blue on click */
+    transform: translateY(0) scale(1);
+}
+
+/* Button Animation (ripple effect) */
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.5s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.menu-item:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+.menu-item span {
+    position: relative;
+    z-index: 1;
+}

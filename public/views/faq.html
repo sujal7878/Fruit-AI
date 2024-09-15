@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit.ai - FAQs</title>
+  <link rel="stylesheet" href="../styles/faq.css">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+
+</head>
+<body>
+  <div class="hide"></div>
+  <spline-viewer url="https://prod.spline.design/G1CB2WA1PQYEveei/scene.splinecode" class="background"></spline-viewer>
+  
+  <div class="faq-container" style="margin-top: 100px;">
+    <h2>Fruit FAQs</h2>
+
+    <form id="add-faq-form">
+      <input type="text" id="fruit" placeholder="Fruit name" required>
+      <textarea id="faq-question" placeholder="Enter FAQ question" required></textarea>
+      <textarea id="faq-answer" placeholder="Enter FAQ answer" required></textarea>
+      <button type="submit">Add FAQ</button>
+    </form>
+
+    <div id="faq-list">
+      <!-- FAQs will be dynamically added here -->
+    </div>
+  </div>
+
+  <script src="../scripts/faq.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc); /* Higher contrast gradient */}
+
+/* Container for login/register form */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for readability */
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: solid 1px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
+
+/* Header styling */
+h2 {
+    text-align: center;
+    color: #333; /* Darker text color for contrast */
+    margin-bottom: 20px;
+}
+
+/* Tabs for switching between login and register forms */
+.form-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.form-tabs a {
+    text-decoration: none;
+    margin: 0 10px;
+    padding-bottom: 10px;
+    color: #333; /* Darker text color for tabs */
+    border-bottom: 2px solid transparent;
+    font-weight: bold;
+}
+
+.form-tabs a.active {
+    border-bottom: 2px solid #1e90ff;
+    color: #1e90ff; /* Color for active tab */
+}
+
+/* Input group styling */
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* Options below the input fields */
+.input-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Button styling with pulse effect */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+    perspective: 1000px; /* Needed for 3D flip effect */
+}
+
+/* Shadow, scale, and color shift on hover */
+button:hover {
+    background-color: #1c86e0;
+    transform: scale(1.05); /* Slight size increase */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow expansion */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing text */
+}
+
+/* Pulse effect */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3); /* White pulse */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 0;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Pulse expands */
+    opacity: 0;
+}
+
+/* Border animation (circle on hover) */
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6); /* White border animation */
+    transition: width 0.4s ease, height 0.4s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+button:hover::after {
+    width: 300%; /* Circle border grows */
+    height: 300%;
+}
+
+/* Flip effect for text */
+button span {
+    display: block;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: 1; /* Ensure text stays above other effects */
+}
+
+button:hover span {
+    transform: rotateY(180deg); /* Flip effect */
+}
+
+/* Social login section styling */
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Fingerprint section styling */
+.fingerprint {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.fingerprint img {
+    width: 60px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Home container styling */
+.home-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4a4a4a;
+}
+
+h3 {
+    margin-top: 10px;
+    color: #7a7a7a;
+}
+
+/* Service grid styling */
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.service-card {
+    padding: 40px 20px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom right, #ffcccb, #ffd700, #87ceeb);
+    text-align: center;
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service-card:hover {
+    background: linear-gradient(to bottom right, #ffd700, #ffcccb, #87ceeb);
+    cursor: pointer;
+}
+
+/* Social login images */
+.images {
+    width: 39px;
+    height: 39px;
+    opacity: 1;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.images2 {
+    margin-top: -3px;
+    width: 44px;
+    height: 44px;
+    mix-blend-mode: multiply;
+}

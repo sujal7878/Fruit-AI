@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit.AI - Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <p>By signing in you are agreeing to our <a href="#">Term and privacy policy</a></p>
+        
+        <div class="form-tabs">
+            <a href="#" class="active" id="login-tab">Login</a>
+            <a href="#" id="register-tab">Register</a>
+        </div>
+        
+        <!-- Login Form -->
+        <div id="login-form" class="form-content">
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <span class="toggle-password">👁</span>
+                </div>
+                <div class="input-options">
+                    <label><input type="checkbox"> Remember password</label>
+                    <a href="#" class="forgot-password">Forget password</a>
+                </div>
+                <button type="submit" onclick = "window.location.href='home.html'">Login</button>
+            </form>
+        </div>
+        
+        <!-- Register Form -->
+        <div id="register-form" class="form-content" style="display: none;">
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <span class="toggle-password">👁</span>
+                </div>
+                <div class="input-options">
+                    <label><input type="checkbox"> Agree to terms</label>
+                </div>
+                <button type="submit" onclick = "window.location.href='home.html'">Register</button>
+            </form>
+        </div>
+        
+        <p>or connect with</p>
+        <div class="social-login">
+            <a href="https://www.facebook.com"><img src="../images/facebook.png" alt="Facebook" class="images"></a>
+            <a href="https://www.instagram.com"><img src="../images/instagram.webp" alt="Instagram" class="images2"></a>
+            <a href="https://www.pinterest.com"><img src="../images/pinterest.png" alt="Pinterest" class="images"></a>
+            <a href="https://www.linkedin.com"><img src="../images/linkedin.png" alt="LinkedIn" class="images"></a>
+        </div>
+        
+        <div class="fingerprint">
+            <img src="../images/Scanner.png" alt="Fingerprint">
+        </div>
+    </div>
+    
+    <script src="../scripts/login.js"></script>
+</body>
+</html>

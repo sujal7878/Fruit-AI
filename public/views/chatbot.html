@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit.ai - Chatbot</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+
+</head>
+<body>
+
+  <div class="hide"></div>
+<spline-viewer url="https://prod.spline.design/G1CB2WA1PQYEveei/scene.splinecode" class="background"></spline-viewer>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Chatbot</h2>
+    </div>
+    <div class="chat-box" id="chat-box">
+      
+    </div>
+    <div class="chat-input-container">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      
+    </div>
+    <button id="send-btn">Send</button>
+  </div>
+
+  <script src="../scripts/chatbot.js"></script>
+</body>
+</html>
